@@ -7,7 +7,7 @@ const { execSync } = require('child_process')
 const exec = cmd => {
     console.log('Running: ', cmd)
     const res = execSync(cmd, { cwd: process.cwd() })
-    console.log('Result:', res)
+    console.log('Result:', res.toString())
 }
 
 try {
@@ -61,6 +61,9 @@ try {
         'utf-8'
     )
     console.log(`${outfile} written ...`)
+    exec(`cat ${outfile}`)
+    exec(`git config --global user.email registrations@codefreeze.fi`)
+    exec(`git config --global user.name "Codefreeze Registrations"`)
     exec(`git add ${outfile}`)
     exec(`git checkout -b registration-${number}`)
     exec(`git commit -m "Registration for ${name}"`)
