@@ -26,11 +26,11 @@ try {
         return;
     }
 
-    const { number, title, body, labels } = payload.issue;
+    const { number, title, body } = payload.issue;
 
-    if (!labels.find(({ name }) => name === 'Registration')) {
+    if (!title.startsWith('Registration')) {
         core.debug(
-            'The issue does not have the registration label, skipping.'
+            'The issue title does not start with "Registration", skipping.'
         );
         return;
     }
