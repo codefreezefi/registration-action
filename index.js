@@ -14,9 +14,6 @@ try {
     const context = github.context;
     const payload = context.payload;
 
-    // Get the JSON webhook payload for the event that triggered the workflow
-    console.log(`The event payload: ${JSON.stringify(payload, undefined, 2)}`);
-
     if (payload.action !== 'opened') {
         core.debug('No issue was opened, skipping');
         return;
