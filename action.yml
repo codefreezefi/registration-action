@@ -1,0 +1,9 @@
+name: Codefreeze Registration
+description: Creates a registration from an issue
+author: coderbyheart
+branding:
+  icon: user-plus
+  color: green
+runs:
+  using: node12
+  main: index.js
