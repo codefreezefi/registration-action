@@ -37,7 +37,7 @@ try {
 
     console.log('title', title)
     console.log('body', body)
-    const { name, pronouns, image, twitter, linkedin, link } = JSON.parse(body.match(/\`\`\`json([^\`]+)```/m)[1])
+    const { name, pronouns, image, ActivityPub, linkedin, link } = JSON.parse(body.match(/\`\`\`json([^\`]+)```/m)[1])
     if (!name) {
         throw new Error(`Registration issue #${number} has not name!`)
     }
@@ -46,7 +46,7 @@ try {
         name,
         ...(pronouns ? { pronouns } : {}),
         ...(image ? { image } : {}),
-        ...(twitter ? { twitter } : {}),
+        ...(ActivityPub ? { activityPub: ActivityPub } : {}),
         ...(linkedin ? { linkedin } : {}),
         ...(link ? { link } : {}),
     }
