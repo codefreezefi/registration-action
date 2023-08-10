@@ -46,7 +46,7 @@ try {
         name,
         ...(pronouns ? { pronouns } : {}),
         ...(image ? { image } : {}),
-        ...(ActivityPub ? { activityPub: ActivityPub } : {}),
+        ...(ActivityPub ? { mastodon: ActivityPub } : {}),
         ...(linkedin ? { linkedin } : {}),
         ...(link ? { link } : {}),
     }
