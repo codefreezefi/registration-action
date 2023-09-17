@@ -77,7 +77,7 @@ try {
             owner: github.context.repo.owner,
             repo: github.context.repo.repo,
             title: `Registration for ${name}`,
-            body: `This pull-request was created automatically for #${number}.`,
+            body: [`This pull-request was created automatically for #${number}.`,``,`Closes #${number}`].join('\n'),
             maintainer_can_modify: true,
         })
         .then(pr => {
